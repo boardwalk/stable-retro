@@ -4,9 +4,9 @@ if(POLICY CMP0048)
   cmake_policy(SET CMP0048 NEW)
 endif()
 
-if(APPLE) # APPLE counts as a UNIX, so APPLE must come first 
+if(APPLE) # APPLE counts as a UNIX, so APPLE must come first
   set(PYEXT_SUFFIX
-      ".so"
+      ".dylib"
       CACHE STRING "Suffix for Python extension modules")
   set(DYNLIB_SUFFIX
       ".dylib"
@@ -234,7 +234,7 @@ add_core(nes fceumm)
 add_core(atari2600 stella)
 
 if(APPLE AND CMAKE_SYSTEM_PROCESSOR MATCHES "arm64")
-  message(warning "Detected Apple Silicon, skipping gambatte (gb)")
+message(warning "Detected Apple Silicon, skipping gambatte (gb)")
 else()
   add_core(gb gambatte)
 endif()
