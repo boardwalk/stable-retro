@@ -239,7 +239,6 @@ else()
   add_core(gb gambatte)
 endif()
 
-add_core(gba mgba)
 add_core(pce mednafen_pce_fast)
 add_core(32x picodrive)
 
